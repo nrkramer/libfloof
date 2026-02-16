@@ -12,6 +12,8 @@ file(GLOB SOUND_FILES
     "${SOUNDS_DIR}/*.wav"
     "${SOUNDS_DIR}/*.flac"
     "${SOUNDS_DIR}/*.aiff"
+    "${SOUNDS_DIR}/*.mp3"
+    "${SOUNDS_DIR}/*.ogg"
 )
 list(SORT SOUND_FILES)
 

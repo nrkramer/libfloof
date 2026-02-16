@@ -10,9 +10,9 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 find_path(MINIAUDIO_INCLUDE_DIRS "miniaudio.h")
 
 # --- Embedded Sound Generation ---
-# Drop .wav, .flac, or .aiff files into sounds/ and they will be
-# automatically embedded into the library at build time.
-# FLAC is recommended over WAV for smaller binary sizes.
+# Drop audio files into sounds/ and they will be automatically embedded
+# into the library at build time. Compressed formats (mp3, ogg) are
+# recommended over lossless (wav, aiff) for smaller binary sizes.
 set(SOUNDS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/sounds")
 set(GENERATED_DIR "${CMAKE_CURRENT_BINARY_DIR}/generated")
 file(MAKE_DIRECTORY "${GENERATED_DIR}")
@@ -21,6 +21,8 @@ file(GLOB SOUND_FILES CONFIGURE_DEPENDS
     "${SOUNDS_DIR}/*.wav"
     "${SOUNDS_DIR}/*.flac"
     "${SOUNDS_DIR}/*.aiff"
+    "${SOUNDS_DIR}/*.mp3"
+    "${SOUNDS_DIR}/*.ogg"
 )
 
 # Predict generated file names so CMake knows what the custom command produces

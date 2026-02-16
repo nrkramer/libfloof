@@ -1,0 +1,8 @@
+{
+    "name": "libfloof",
+    "version": "0.1.0",
+    "description": "A library for playing cute cat noises",
+    "dependencies": [
+        "miniaudio"
+    ]
+}
